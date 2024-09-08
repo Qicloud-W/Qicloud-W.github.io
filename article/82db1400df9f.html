@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>高并发压力测试 | 七云's Blog</title><meta name="author" content="Qicloud"><meta name="copyright" content="Qicloud"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="为什么要进行压力测试？ 1）帮助我们了解服务器的性能以及并发 2）帮助我们查找程序问题 3）帮助我们了解网站的并发量 4）了解业务系统的瓶颈 5）了解服务器硬件的瓶颈 使用apache的ab.exe进行压力测试 通过上面的用法介绍可以得知，ab的使用方法就是输入如下DOS命令： ab [可选的参数选项] 需要进行压力测试的url 此外，我们再根据上面的用法介绍界面来详细了解每个参数选项的作用。 -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高并发压力测试">
+<meta property="og:url" content="https://qicloud-w.github.io/article/82db1400df9f.html">
+<meta property="og:site_name" content="七云&#39;s Blog">
+<meta property="og:description" content="为什么要进行压力测试？ 1）帮助我们了解服务器的性能以及并发 2）帮助我们查找程序问题 3）帮助我们了解网站的并发量 4）了解业务系统的瓶颈 5）了解服务器硬件的瓶颈 使用apache的ab.exe进行压力测试 通过上面的用法介绍可以得知，ab的使用方法就是输入如下DOS命令： ab [可选的参数选项] 需要进行压力测试的url 此外，我们再根据上面的用法介绍界面来详细了解每个参数选项的作用。 -">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dev.zets.cn/api/file/rand?name=imgs.txt&id=15">
+<meta property="article:published_time" content="2018-09-11T09:16:00.000Z">
+<meta property="article:modified_time" content="2024-05-21T16:21:34.748Z">
+<meta property="article:author" content="Qicloud">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dev.zets.cn/api/file/rand?name=imgs.txt&id=15"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://qicloud-w.github.io/article/82db1400df9f.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '高并发压力测试',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-05-22 00:21:34'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://q.qlogo.cn/g?b=sdk&amp;k=UeVu6eVo5SdL2Eu7PiczvTw&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">211</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=15')"><nav id="nav"><span id="blog-info"><a href="/" title="七云's Blog"><img class="site-icon" src="https://api.zets.cn/admin/images/logo-sm.gif"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">高并发压力测试</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-09-11T09:16:00.000Z" title="发表于 2018-09-11 17:16:00">2018-09-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-21T16:21:34.748Z" title="更新于 2024-05-22 00:21:34">2024-05-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/">絮絮叨叨</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="高并发压力测试"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>为什么要进行压力测试？
+1）帮助我们了解服务器的性能以及并发</p>
+<p>2）帮助我们查找程序问题</p>
+<p>3）帮助我们了解网站的并发量</p>
+<p>4）了解业务系统的瓶颈</p>
+<p>5）了解服务器硬件的瓶颈</p>
+<p>使用apache的ab.exe进行压力测试</p>
+<p>通过上面的用法介绍可以得知，ab的使用方法就是输入如下DOS命令：</p>
+<p>ab [可选的参数选项] 需要进行压力测试的url</p>
+<p>此外，我们再根据上面的用法介绍界面来详细了解每个参数选项的作用。</p>
+<pre><code>-n</code></pre>
+<p>即requests，用于指定压力测试总共的执行次数。</p>
+<pre><code>-c</code></pre>
+<p>即concurrency，用于指定压力测试的并发数。</p>
+<pre><code>-t</code></pre>
+<p>即timelimit，等待响应的最大时间(单位：秒)。</p>
+<pre><code>-b</code></pre>
+<p>即windowsize，TCP发送/接收的缓冲大小(单位：字节)。</p>
+<pre><code>-p</code></pre>
+<p>即postfile，发送POST请求时需要上传的文件，此外还必须设置-T参数。</p>
+<pre><code>-u</code></pre>
+<p>即putfile，发送PUT请求时需要上传的文件，此外还必须设置-T参数。</p>
+<pre><code>-T</code></pre>
+<p>即content-type，用于设置Content-Type请求头信息，例如：application/x-www-form-urlencoded，默认值为text/plain。</p>
+<pre><code>-v</code></pre>
+<p>即verbosity，指定打印帮助信息的冗余级别。</p>
+<pre><code>-w</code></pre>
+<p>以HTML表格形式打印结果。</p>
+<pre><code>-i</code></pre>
+<p>使用HEAD请求代替GET请求。</p>
+<pre><code>-x</code></pre>
+<p>插入字符串作为table标签的属性。</p>
+<pre><code>-y</code></pre>
+<p>插入字符串作为tr标签的属性。</p>
+<pre><code>-z</code></pre>
+<p>插入字符串作为td标签的属性。</p>
+<pre><code>-C</code></pre>
+<p>添加cookie信息，例如：&quot;Apache=1234&quot;(可以重复该参数选项以添加多个)。</p>
+<pre><code>-H</code></pre>
+<p>添加任意的请求头，例如：&quot;Accept-Encoding: gzip&quot;，请求头将会添加在现有的多个请求头之后(可以重复该参数选项以添加多个)。</p>
+<pre><code>-A</code></pre>
+<p>添加一个基本的网络认证信息，用户名和密码之间用英文冒号隔开。</p>
+<pre><code>-P</code></pre>
+<p>添加一个基本的代理认证信息，用户名和密码之间用英文冒号隔开。</p>
+<pre><code>-X</code></pre>
+<p>指定使用的代理服务器和端口号，例如:&quot;126.10.10.3:88&quot;。</p>
+<pre><code>-V</code></pre>
+<p>打印版本号并退出。</p>
+<pre><code>-k</code></pre>
+<p>使用HTTP的KeepAlive特性。</p>
+<pre><code>-k</code></pre>
+<p>使用HTTP的KeepAlive特性。</p>
+<pre><code>-d</code></pre>
+<p>不显示百分比。</p>
+<pre><code>-S</code></pre>
+<p>不显示预估和警告信息。</p>
+<pre><code>-g</code></pre>
+<p>输出结果信息到gnuplot格式的文件中。</p>
+<pre><code>-e</code></pre>
+<p>输出结果信息到CSV格式的文件中。</p>
+<pre><code>-r</code></pre>
+<p>指定接收到错误信息时不退出程序。</p>
+<pre><code>-h</code></pre>
+<p>显示用法信息，其实就是ab -help。</p>
+<p>虽然ab可以配置的参数选项比较多，但是，一般情况下我们只需要使用形如ab -n 数字 -c 数字 url路径的命令即可。</p>
+<p>使用ab进行压力测试
+我们对位于本地Apache服务器上、URL为localhost/index.php的页面进行压力测试。测试总次数为1000，并发数为100(相当于100个用户同时访问，他们总共访问1000次)。我们输入DOS命令ab -n 1000 -c 100 localhost/index.php，打印结果如下：</p>
+<pre><code>F:\Apache2.2\bin&gt;ab -n 1000 -c 100 localhost/index.php
+
+<p>This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;</p>
+<p>Copyright 1996 Adam Twiss, Zeus Technology Ltd, <a target="_blank" rel="noopener" href="http://www.zeustech.net/">http://www.zeustech.net/</a></p>
+<p>Licensed to The Apache Software Foundation, <a target="_blank" rel="noopener" href="http://www.apache.org/">http://www.apache.org/</a></p>
+<p>Benchmarking localhost (be patient)</p>
+<p>Completed 100 requests</p>
+<p>Completed 200 requests</p>
+<p>Completed 300 requests</p>
+<p>Completed 400 requests</p>
+<p>Completed 500 requests</p>
+<p>Completed 600 requests</p>
+<p>Completed 700 requests</p>
+<p>Completed 800 requests</p>
+<p>Completed 900 requests</p>
+<p>Completed 1000 requests</p>
+<p>Finished 1000 requests</p>
+<p>Server Software:        Apache&#x2F;2.2.25 (服务器软件名称及版本信息)</p>
+<p>Server Hostname:        localhost (服务器主机名)</p>
+<p>Server Port:            80 (服务器端口)</p>
+<p>Document Path:          &#x2F;index.php (供测试的URL路径)</p>
+<p>Document Length:        10 bytes (供测试的URL返回的文档大小)</p>
+<p>Concurrency Level:      100 (并发数)</p>
+<p>Time taken for tests:   0.247 seconds (压力测试消耗的总时间)</p>
+<p>Complete requests:      1000 (压力测试的总次数)</p>
+<p>Failed requests:        0 (失败的请求数)</p>
+<p>Write errors:           0 (网络连接写入错误数)</p>
+<p>Total transferred:      198000 bytes (传输的总数据量)</p>
+<p>HTML transferred:       10000 bytes (HTML文档的总数据量)</p>
+<p>Requests per second:    4048.34 [#&#x2F;sec] (mean) (平均每秒的请求数)</p>
+<p>Time per request:       24.701 [ms] (mean) (所有并发用户(这里是100)都请求一次的平均时间)</p>
+<p>Time per request:       0.247 [ms] (mean, across all concurrent requests) (单个用户请求一次的平均时间)</p>
+<p>Transfer rate:          782.78 [Kbytes&#x2F;sec] received (传输速率，单位：KB&#x2F;s）<br>Connection Times (ms)</p>
+<pre><code>      min  mean[+/-sd] median   max
+</code></pre>
+<p>Connect:        0    0   0.3      0       1</p>
+<p>Processing:     6   23   4.2     24      30</p>
+<p>Waiting:        5   20   5.3     21      29</p>
+<p>Total:          6   23   4.2     24      30</p>
+<p>Percentage of the requests served within a certain time (ms)</p>
+<p>  50%     24</p>
+<p>  66%     25</p>
+<p>  75%     26</p>
+<p>  80%     26</p>
+<p>  90%     27</p>
+<p>  95%     27</p>
+<p>  98%     28</p>
+<p>  99%     29</p>
+<p> 100%     30 (longest request)</code></pre></p>
+<p>在上面的测试中，我们设置的压力测试总次数以及并发数并没有让服务器感觉到什么「压力」，现在我们再来看一个「压力山大」的执行命令：ab -n 100000 -c 1000 localhost/index.php,这个时候apache就直接罢工——拒绝访问了：</p>
+<pre><code>F:\Apache2.2\bin&gt;ab -n 100000 -c 1000 localhost/index.php
+
+<p>This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;</p>
+<p>Copyright 1996 Adam Twiss, Zeus Technology Ltd, <a target="_blank" rel="noopener" href="http://www.zeustech.net/">http://www.zeustech.net/</a></p>
+<p>Licensed to The Apache Software Foundation, <a target="_blank" rel="noopener" href="http://www.apache.org/">http://www.apache.org/</a></p>
+<p>Benchmarking localhost (be patient)  </p>
+<p>Test aborted after 10 failures</p>
+<p>apr_socket_connect(): 由于目标计算机积极拒绝，无法连接。   (730061)</code></pre></p>
+<p>使用PYLOT进行压力测试
+一、pylot是什么？
+　　一个基于python的简单易用，跨平台的开源网站压力测试工具，可以从命令行运行也可以开启图形界面运行，可以设置cookie，可以将测试结果制作成图表方便查看。</p>
+<p>二、使用pylot进行压力测试
+1、安装python</p>
+<pre><code>https://blog.csdn.net/weixin_41782053/article/details/80670656</code></pre>
+<p>2、使用pylot</p>
+<p>1、下载完pylot之后，解压到一个目录下，例如：C:\pylot_1.26，无需安装。</p>
+<pre><code>  2、配置testcases.xml
+
+<p>  在pylot_1.26文件夹里，会看到一个testcases.xml的文件，我们需要更改一下这个文件，用记事本打开它，把需要测试的网页地址添加进去。</p>
+<p>&lt;testcases&gt;<br>&lt;!– SAMPLE TEST CASE –&gt;<br>&lt;case&gt;<br>    &lt;url&gt;<a target="_blank" rel="noopener" href="http://www.example.com/&lt;/url">http://www.example.com/&lt;/url</a>&gt;<br>&lt;&#x2F;case&gt;</p>
+<p>&lt;!– SAMPLE TEST CASE –&gt;<br>&lt;!–<br>&lt;case&gt;<br>    &lt;url&gt;<a target="_blank" rel="noopener" href="http://search.yahooapis.com/WebSearchService/V1/webSearch&lt;/url">http://search.yahooapis.com/WebSearchService/V1/webSearch&lt;/url</a>&gt;<br>    &lt;method&gt;POST&lt;&#x2F;method&gt;<br>    &lt;body&gt;&lt;![CDATA[appid&#x3D;YahooDemo&amp;query&#x3D;pylot]]&gt;&lt;&#x2F;body&gt;<br>    &lt;add_header&gt;Content-type: application&#x2F;x-www-form-urlencoded&lt;&#x2F;add_header&gt;<br>    &lt;&#x2F;case&gt;<br>–&gt;</code></pre></p>
+<p></testcases></p>
+<p>上面代码中，把“http://www.example.com/”改为你要测试的网址，然后保存文件。</p>
+<p>3、压力测试
+打开dos窗口（点击“开始”-“运行”，输入cmd，点击“确定”），进入pylot的目录，
+输入如下命令：</p>
+<p>python run.py -a 100 -d 20</p>
+<p>解释：-a 表示并发100个客户端连接，-d 表示持续运行时间为20秒</p>
+<p>这时，会看到python的运行界面（我这里演示并发20，运行时间10秒），</p>
+<p>python pylot压力测试</p>
+<p>看到类似以上信息，就表示测试结束了。（如果一直没有出现上图的信息，那可能是并发数太多了，把并发数改少点试试，例如只并发20，不要一下子就并发1000）
+测试结束后，会在pylot的文件目录里生成一个“results”的文件夹，还生成一个results.html的文件，这个文件记录了详细的测试数据。我们可以进入results的目录，打开这个文件，看看我的测试结果：</p>
+<p>pylot压力测试生成的数据
+<img src="https://img-blog.csdn.net/2018061218423887?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="请输入图片描述" /></p>
+<p>疑问：为什么测试结果中图形显示不出来？</p>
+<p>测试结果的提示信息看到：
+<img src="https://img-blog.csdn.net/20180612184416647?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTc4MjA1Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="请输入图片描述" /></p>
+<pre><code>python pylot压力测试生成图形失败
+
+<p>Generating Results…<br>Generating Graphs…<br>Matplotlib ImportError: No module named pylab<br>ERROR: Unable to generate graphs with Matplotlib</code></pre></p>
+<p>所以，要想测试结果得到相关的曲线图，还得安装numpy和Matplotlib这两个插件。</p>
+<p>包含曲线图的pylot压力测试报告样本可以看这里：</p>
+<p>安装后的python/paylot目录下的result.html</p>
+<pre><code>   file:///E:/python/pylot/pylot_1.26/results/results_2018.06.12_16.08.24/results.html</code></pre>
+<p>本文来源于CSDN博客
+原文链接https://blog.csdn.net/weixin_41782053/article/details/80665746</p></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qicloud-w.github.io">Qicloud</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qicloud-w.github.io/article/82db1400df9f.html">https://qicloud-w.github.io/article/82db1400df9f.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qicloud-w.github.io" target="_blank">七云's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=15" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/711b3a6100ab.html" title="要提高国民素质必须si一批人"><img class="cover" src="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=16" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">要提高国民素质必须si一批人</div></div></a></div><div class="next-post pull-right"><a href="/article/9ea33a2f383d.html" title="Emlog到Typecho的迁移教程：附工具emlog2ty"><img class="cover" src="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=14" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Emlog到Typecho的迁移教程：附工具emlog2ty</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://q.qlogo.cn/g?b=sdk&amp;k=UeVu6eVo5SdL2Eu7PiczvTw&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Qicloud</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">211</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">68</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Qicloud-W"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/176a8e7d22fe.html" title="海南机房遭劫"><img src="/image/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="海南机房遭劫"/></a><div class="content"><a class="title" href="/article/176a8e7d22fe.html" title="海南机房遭劫">海南机房遭劫</a><time datetime="2024-09-07T16:00:00.000Z" title="发表于 2024-09-08 00:00:00">2024-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/e0c83aa5d972.html" title="版权流氓「视觉中国」"><img src="/../image/telang.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="版权流氓「视觉中国」"/></a><div class="content"><a class="title" href="/article/e0c83aa5d972.html" title="版权流氓「视觉中国」">版权流氓「视觉中国」</a><time datetime="2024-07-20T16:00:00.000Z" title="发表于 2024-07-21 00:00:00">2024-07-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/4bc37880446c.html" title="继中科大dockerhub源不对外后各大厂商均关闭服务"><img src="https://dev.zets.cn/storage/inis-theme-jue/article/2024-06-08image/1717865122419.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="继中科大dockerhub源不对外后各大厂商均关闭服务"/></a><div class="content"><a class="title" href="/article/4bc37880446c.html" title="继中科大dockerhub源不对外后各大厂商均关闭服务">继中科大dockerhub源不对外后各大厂商均关闭服务</a><time datetime="2024-06-18T06:09:10.000Z" title="发表于 2024-06-18 14:09:10">2024-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/c229f149435b.html" title="「破代码」迁移inis3到hexo"><img src="/../image/hexo240522.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「破代码」迁移inis3到hexo"/></a><div class="content"><a class="title" href="/article/c229f149435b.html" title="「破代码」迁移inis3到hexo">「破代码」迁移inis3到hexo</a><time datetime="2024-05-22T14:58:00.000Z" title="发表于 2024-05-22 22:58:00">2024-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/37d05a1ec4ca.html" title="「破代码」迁移inis3到hexo"><img src="/../image/hexo240522.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「破代码」迁移inis3到hexo"/></a><div class="content"><a class="title" href="/article/37d05a1ec4ca.html" title="「破代码」迁移inis3到hexo">「破代码」迁移inis3到hexo</a><time datetime="2024-05-22T14:58:00.000Z" title="发表于 2024-05-22 22:58:00">2024-05-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Qicloud</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//npm.elemecdn.com/penndu@1.0.0/bsz.js"></script></div></body></html>
