@@ -8,7 +8,7 @@
       <link href="//article/176a8e7d22fe.html"/>
       <url>//article/176a8e7d22fe.html</url>
       
-        <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>啥也不说了,海南机房主节点飞了,那边的同事暂时失联,最新消息是窗户都被刮飞了,所以这件事情目前没办法,至于恢复主节点,暂时还没办法,不过反正有备份,临时先拿<a href="https://qicloud-w.github.io/">https://qicloud-w.github.io/</a> 永久站点先顶着吧</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>暂无:;</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>啥也不说了,海南机房主节点飞了,友链暂时拿不到,那边机房的同事暂时失联,最新消息是窗户都被刮飞了,所以这件事情目前没办法,至于恢复主节点,暂时还没办法,不过反正有备份,临时先拿<a href="https://qicloud-w.github.io/">https://qicloud-w.github.io/</a> 永久站点先顶着吧</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>暂无:;</p>]]></content>
       
       
       <categories>
@@ -1860,25 +1860,6 @@
       <url>//article/b4f28a87dce0.html</url>
       
         <content type="html"><![CDATA[<pre><code>```php   </code></pre><p>&lt;?php/*</p><ul><li>@Author: Qicloud</li><li>@Date: 2020-10-20 21:33:50</li><li>@Title: 网易云</li><li>@Project: 获取歌单全部歌曲id</li><li>@QQ: 66547997</li><li>@当浑浊变成一种常态，清白就是一种罪。*///歌单id$id = 3778678;$url = file_get_contents('https://music.163.com/api/playlist/detail?id=' . $id);//这个歌单有200首歌所以循环200次$a = 1;while ($a &lt;= 200) {$arr = json_decode($url, true);$data = @$arr['result']['tracks'][$a]['id'];file_put_contents(&quot;soars.txt&quot;, $data . &quot;\r\n&quot;, FILE_APPEND);$a++;}</li></ul><p>因为这个有反爬虫，所有我选择保存歌曲id到txt用作缓存，可以利用歌曲id做网易云随机热评，等等</p><p>id=19723756，云音乐飙升榜</p><p>id=3779629，云音乐新歌榜</p><p>id=3778678，云音乐热歌榜</p><p>id=2250011882，抖音排行榜</p><p>具体id可以按需求自己查找。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 絮絮叨叨 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mysql针对字段中换行符&#92;r&#92;n进行查询和删除</title>
-      <link href="//article/b9bef1b8b921.html"/>
-      <url>//article/b9bef1b8b921.html</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://p.ananas.chaoxing.com/star3/origin/626166907b834c3ce1a630530e1e915a.png" alt="" /></p><p>mysql中某个数据字段包含换行符，导致前台解析json时报错</p><pre><code class="language-sql">    “Uncaught SyntaxError: Unexpected token  in JSON at position 333”；<p>char(9), char(10), char(13)分别是：<br>char(9) 表示水平制表符 （tab键 \t）</p><p>char(10) 表示换行键 （\n）</p><p>char(13) 表示回车键 （\r）</code></pre></p><p>针对上述问题字段在mysql数据库中进行查询，如下语句</p><pre><code>```sqlSELECT *FROM qy_imgurl WHERE content LIKE CONCAT('%',CHAR(13),'%');</code></pre><pre><code> 即可查询qy_imgurl表中content 字段中包含换行符的数据有哪些；<p>将包含的换行符去除，执行以下语句即可</p><pre><code>```sqlUPDATE qy_imgurl SET content =REPLACE(REPLACE(content,CHAR(10),&#39;&#39;),CHAR(13),&#39;&#39;)WHERE content LIKE CONCAT(&#39;%&#39;,CHAR(13),&#39;%&#39;);&lt;/code&gt;&lt;/pre&gt;</code></pre>]]></content>
       
       
       <categories>
