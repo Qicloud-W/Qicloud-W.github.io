@@ -1887,25 +1887,6 @@
     
     
     <entry>
-      <title>mysql针对字段中换行符&#92;r&#92;n进行查询和删除</title>
-      <link href="//article/b9bef1b8b921.html"/>
-      <url>//article/b9bef1b8b921.html</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://p.ananas.chaoxing.com/star3/origin/626166907b834c3ce1a630530e1e915a.png" alt="" /></p><p>mysql中某个数据字段包含换行符，导致前台解析json时报错</p><pre><code class="language-sql">    “Uncaught SyntaxError: Unexpected token  in JSON at position 333”；<p>char(9), char(10), char(13)分别是：<br>char(9) 表示水平制表符 （tab键 \t）</p><p>char(10) 表示换行键 （\n）</p><p>char(13) 表示回车键 （\r）</code></pre></p><p>针对上述问题字段在mysql数据库中进行查询，如下语句</p><pre><code>```sqlSELECT *FROM qy_imgurl WHERE content LIKE CONCAT('%',CHAR(13),'%');</code></pre><pre><code> 即可查询qy_imgurl表中content 字段中包含换行符的数据有哪些；<p>将包含的换行符去除，执行以下语句即可</p><pre><code>```sqlUPDATE qy_imgurl SET content =REPLACE(REPLACE(content,CHAR(10),&#39;&#39;),CHAR(13),&#39;&#39;)WHERE content LIKE CONCAT(&#39;%&#39;,CHAR(13),&#39;%&#39;);&lt;/code&gt;&lt;/pre&gt;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 絮絮叨叨 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>驾考C1考试技巧总结</title>
       <link href="//article/6000c612a9c4.html"/>
       <url>//article/6000c612a9c4.html</url>

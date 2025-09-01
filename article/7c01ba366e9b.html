@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>handsome美化  魔改 | 七云's Blog</title><meta name="author" content="Qicloud"><meta name="copyright" content="Qicloud"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 Handsome主题 在复杂中，保持简洁。 一款精心打磨后的typecho主题 介绍              博主使用Handsome主题已有一年多了，这款主题论售后还是更新都很好，而且也主题本身也不贵。 如果你是小白或者第一次使用这个模板，那一定要仔细看好了作者写的使用文档 本文博主整理了几种美化样式，希望有喜欢的~      &lt;&#x2F;div&gt;&lt;&#x2F;p&gt;  美化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="handsome美化  魔改">
+<meta property="og:url" content="https://qicloud-w.github.io/article/7c01ba366e9b.html">
+<meta property="og:site_name" content="七云&#39;s Blog">
+<meta property="og:description" content="前言 Handsome主题 在复杂中，保持简洁。 一款精心打磨后的typecho主题 介绍              博主使用Handsome主题已有一年多了，这款主题论售后还是更新都很好，而且也主题本身也不贵。 如果你是小白或者第一次使用这个模板，那一定要仔细看好了作者写的使用文档 本文博主整理了几种美化样式，希望有喜欢的~      &lt;&#x2F;div&gt;&lt;&#x2F;p&gt;  美化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dev.zets.cn/api/file/rand?name=imgs.txt&id=397">
+<meta property="article:published_time" content="2019-11-21T03:09:00.000Z">
+<meta property="article:modified_time" content="2024-06-06T13:53:19.990Z">
+<meta property="article:author" content="Qicloud">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dev.zets.cn/api/file/rand?name=imgs.txt&id=397"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://qicloud-w.github.io/article/7c01ba366e9b.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'handsome美化  魔改',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-06 21:53:19'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://q.qlogo.cn/g?b=sdk&amp;k=UeVu6eVo5SdL2Eu7PiczvTw&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">211</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">71</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=397')"><nav id="nav"><span id="blog-info"><a href="/" title="七云's Blog"><img class="site-icon" src="https://api.zets.cn/admin/images/logo-sm.gif"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">handsome美化  魔改</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-11-21T03:09:00.000Z" title="发表于 2019-11-21 11:09:00">2019-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-06T13:53:19.990Z" title="更新于 2024-06-06 21:53:19">2024-06-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/">絮絮叨叨</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="handsome美化  魔改"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2>前言</h2>
+<p><code>Handsome主题</code></p>
+<p>在复杂中，保持简洁。 一款精心打磨后的<code>typecho</code>主题</p>
+<h2>介绍</h2>
+<p><div class="alert bg-primary text-dark" role="alert">
+            博主使用<code>Handsome</code>主题已有一年多了，这款主题论售后还是更新都很好，而且也主题本身也不贵。
+如果你是小白或者第一次使用这个模板，那一定要仔细看好了作者写的使用文档
+本文博主整理了几种美化样式，希望有喜欢的~
+
+<pre><code>    &lt;/div&gt;&lt;/p&gt;
+</code></pre>
+<h2>美化</h2>
+<p><div class="alert bg-primary text-dark" role="alert">
+            为了减少对源码的修改，本次美化大多数可以直接在后台开发者设置-自定义css中添加代码即可。
+        </div></p>
+<h2><strong>1. 头像呼吸光环和鼠标悬停旋转放大</strong></h2>
+<pre><code class="language-css">    .img-full &#123;
+        width: 100px;
+        border-radius: 50%;
+        animation: light 4s ease-in-out infinite;
+        transition: 0.5s;
+    &#125;
+
+<pre><code>.img-full:hover &#123;
+transform: scale(1.15) rotate(720deg);
+&#125;
+
+@keyframes light &#123;
+    0% &#123;
+        box-shadow: 0 0 4px #f00;
+    &#125;
+
+    25% &#123;
+    box-shadow: 0 0 16px #0f0;
+    &#125;
+
+    50% &#123;
+    box-shadow: 0 0 4px #00f;
+    &#125;
+
+    75% &#123;
+    box-shadow: 0 0 16px #0f0;
+    &#125;
+
+    100% &#123;
+    box-shadow: 0 0 4px #f00;
+    &#125;
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>如果只需要单色呼吸光环，例如红色，可以将关键帧动画改为：
+@keyframes light {
+from {
+box-shadow: 0 0 4px #f00;
+}</p>
+<pre><code>    to &#123;
+        box-shadow: 0 0 16px #f00;
+    &#125;
+&#125;</code></pre>
+<h2><strong>2. 左侧文章图标和评论头像鼠标悬停旋转</strong></h2>
+<pre><code class="language-css">    .img-circle &#123;
+        transition: all 0.3s;
+    &#125;
+
+<pre><code>.img-circle:hover &#123;
+    transform: rotate(360deg);
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>3. 文章内打赏图标跳动</strong></h2>
+<pre><code class="language-css">    .btn-pay &#123;
+        animation: star 0.5s ease-in-out infinite alternate;
+    &#125;
+
+<pre><code>@keyframes star &#123;
+    from &#123;
+        transform: scale(1);
+    &#125;
+
+    to &#123;
+        transform: scale(1.1);
+    &#125;
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>4. 彩色标签云</strong></h2>
+<p>js为标签随机添加上预先定义的颜色，每次刷新都会进行换色：</p>
+<pre><code class="language-js">    let tags = document.querySelectorAll("#tag_cloud-2 a");
+    let colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+    tags.forEach(tag => &#123;
+    tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+    tag.style.backgroundColor = tagsColor;
+    &#125;);</code></pre>
+<p>如果主题中启用了<code>pjax</code>，还需要将上面代码添加到<code>pjax</code>回调函数中</p>
+<h2><strong>5. 首页文章列表悬停上浮</strong></h2>
+<pre><code class="language-css">    .blog-post .panel:not(article) &#123;
+    transition: all 0.3s;
+    &#125;
+
+<pre><code>.blog-post .panel:not(article):hover &#123;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 10px rgba(73, 90, 47, 0.47);
+&#125;
+</code></pre>
+<p></code></pre></p>
+<h2><strong>6. 首页文章列表头图悬停放大并将超出范围隐藏</strong></h2>
+<pre><code class="language-css">    .index-post-img &#123;
+        overflow: hidden;
+    &#125;
+
+<pre><code>.item-thumb &#123;
+    transition: all 0.3s;
+&#125;
+
+.item-thumb:hover &#123;
+    transform: scale(1.1)
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>7. 文章内头图和文章图片悬停放大并将超出范围隐藏</strong></h2>
+<pre><code class="language-css">    .entry-thumbnail &#123;
+        overflow: hidden;
+    &#125;
+
+<pre><code>#post-content img &#123;
+    border-radius: 10px;
+    transition: 0.5s;
+&#125;
+
+#post-content img:hover &#123;
+    transform: scale(1.05);
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>8. 右侧列表导航栏图标颜色</strong></h2>
+<pre><code class="language-css">    .glyphicon-fire &#123;
+        color: #ff0000;
+    &#125;
+
+<pre><code>.nav-tabs-alt .glyphicon-comment &#123;
+    color: #495dc3;
+&#125;
+
+.glyphicon-transfer &#123;
+    color: #0e5458;
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>9. 点击空白区域隐藏歌曲列表</strong></h2>
+<p>主题中原来是必须重新点击耳机图标才能将歌曲列表隐藏，感觉有点累，而且此时再点击闲言碎语会将两个元素重叠。设置之后可以点击空白区域将歌曲列表隐藏，由于本文主旨是尽量不修改源码，所以实现的方式较为繁琐。先添加css：</p>
+<pre><code class="language-css">    .musicPlayerHiden &#123;
+        display: none;
+    &#125;</code></pre>
+<p>然后添加js代码：</p>
+<pre><code class="language-js">    document.body.onclick = function () &#123;
+        document.querySelector(".skPlayer-list").classList.add("musicPlayerHiden");
+    &#125;
+
+<pre><code>document.querySelector(&quot;.skPlayer-list-switch&quot;).onclick = function (e) &#123;
+    document.querySelector(&quot;.skPlayer-list&quot;).classList.remove(&quot;musicPlayerHiden&quot;);
+    document.querySelector(&quot;.skPlayer-list&quot;).onclick = function (e) &#123;
+        if (e &amp;&amp; e.stopPropagation) &#123;
+            e.stopPropagation();
+        &#125; else &#123;
+            window.event.cancalBubble = true;
+        &#125;
+    &#125;
+
+    if (e &amp;&amp; e.stopPropagation) &#123;
+        e.stopPropagation();
+    &#125; else &#123;
+        window.event.cancalBubble = true;
+    &#125;
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<h2><strong>10.文章标题居中</strong></h2>
+<pre><code class="language-css">    .panel h2&#123;
+        text-align: center; 
+    &#125;
+    .post-item-foot-icon&#123;
+        text-align: center;
+    &#125;
+```css
+目前小站就改了这些，如果后面再修改再添加感谢西瓜博客提供了大部分代码
+
+<h2 id="复制弹窗效果"><a href="#复制弹窗效果" class="headerlink" title="复制弹窗效果"></a>复制弹窗效果</h2><hr>
+<p>[post cid&#x3D;”370” &#x2F;]</p>
+<h2 id="关于我页面时间轴记录"><a href="#关于我页面时间轴记录" class="headerlink" title="关于我页面时间轴记录"></a>关于我页面时间轴记录</h2><p>[post cid&#x3D;”401” &#x2F;]</p>
+<h2 id="js动态标题"><a href="#js动态标题" class="headerlink" title="js动态标题"></a>js动态标题</h2><p>[post cid&#x3D;”322” &#x2F;]</p>
+<h2 id="春节倒计时"><a href="#春节倒计时" class="headerlink" title="春节倒计时"></a>春节倒计时</h2><p>[post cid&#x3D;”422” &#x2F;]</p>
+<h2 id="首页左侧博主介绍"><a href="#首页左侧博主介绍" class="headerlink" title="首页左侧博主介绍"></a>首页左侧博主介绍</h2><p>将以下代码添加至后台-外观-初级设置-博主的介绍。<code>这段代码可添加至网站任意位置</code></code></pre></p>
+<pre><code><span class="text-muted text-xs block">
+<div id="chakhsu"></div> 
+<script> 
+    var chakhsu = function (r) &#123;
+        function t() &#123;
+            return b[Math.floor(Math.random() * b.length)]&#125; 
+        function e() &#123;
+            return String.fromCharCode(94 * Math.random() + 33)&#125; 
+        function n(r) &#123;
+            for (var n = document.createDocumentFragment(), i = 0; r > i; i++) &#123; 
+                var l = document.createElement("span"); l.textContent = e(), l.style.color = t(), n.appendChild(l) &#125; 
+            return n&#125;
+        function i() &#123;
+            var t = o[c.skillI]; 
+            c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d) &#125; 
+        /*以下内容自定义修改*/ var l = "因为喜欢", o = ["所以折腾" ].map(
+        function (r) &#123;
+            return r + ""&#125;), a = 2, g = 1, s = 5, d = 75, b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"], c = &#123;text: "", prefixP: -s, skillI: 0, skillP: 0, direction: "forward", delay: a, step: g&#125;; i() 
+    &#125;; 
+    chakhsu(document.getElementById('chakhsu')); 
+</script></span> </span></code></pre>
+
+<pre><code>
+底部版权
+----
+
+1：先去除`/usr/themes/handsome/component/footer.php`中原有版权信息，将注释`<!--可以去除主题版权信息，最好保留版权信息或者添加主题信息到友链，谢谢你的理解-->`之前的代码替换即可
+```php
+    <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+    <?php Content::outputCommentJS($this, $this->security); ?>
+    </div><!-- /content -->
+      <footer id="footer" class="app-footer" role="footer">
+        <div class="wrapper bg-light">
+          <span class="pull-right hidden-xs text-ellipsis">
+          <?php $this->options->BottomInfo(); ?>
+
+          </span>
+              <span class="text-ellipsis">&nbsp;<?php
+                $this->options->BottomleftInfo(); ?></span>
+        </div>
+          <!--可以去除主题版权信息，最好保留版权信息或者添加主题信息到友链，谢谢你的理解--></code></pre>
+
+<p>2：将以下代码添加至<code>后台-开发者设置-博客底部右侧信息</code>(左侧类似)。</p>
+<pre><code class="language-php">    <div class="github-badge">
+    <a rel="license" href="http://beian.miit.gov.cn/" target="_blank" title="京ICP备18051114号-1">
+    <span class="badge-subject">京ICP备</span><span class="badge-value bg-black">18051114号-1</span></a>
+    </div>
+    &nbsp;|&nbsp; <div class="github-badge">
+    <a rel="license" href="http://www.typecho.org" target="_blank" title="由Typecho强力驱动">
+    <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Typecho</span></a>
+    </div>
+    &nbsp;|&nbsp; <div class="github-badge">
+    <a rel="license" href="https://www.ihewro.com/archives/489/" target="_blank" title="站点使用 handsome 主题，作者：友人C">
+    <span class="badge-subject">Theme</span><span class="badge-value bg-orange">Handsome</span></a>
+    </div>
+</code></pre>
+<p>3：将以下代码添加至<code>后台-开发者设置-自定义CSS</code>。</p>
+<pre><code class="language-css">    .github-badge &#123;
+        display: inline-block;
+        border-radius: 4px;
+        text-shadow: none;
+        font-size: 12px;
+        color: #fff;
+        line-height: 15px;
+        background-color: #ABBAC3;
+      margin-bottom: 5px;
+    &#125;
+    .github-badge .badge-subject &#123;
+        display: inline-block;
+        background-color: #4D4D4D;
+        padding: 4px 4px 4px 6px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    &#125;
+    .github-badge .badge-value &#123;
+        display: inline-block;
+        padding: 4px 6px 4px 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    &#125;
+    .github-badge .bg-brightgreen &#123;
+        background-color: #4DC820 !important;
+    &#125;
+    .github-badge .bg-orange &#123;
+        background-color: #FFA500 !important;
+    &#125;
+    .github-badge .bg-blueviolet &#123;
+        background-color: #8833D7 !important;
+    &#125;
+    .github-badge .bg-firebrick &#123;
+        background-color: #EE2C2C !important;
+    &#125;
+    .github-badge .bg-blue &#123;
+        background-color: #007EC6 !important;
+    &#125;
+    .github-badge .bg-lightgrey &#123;
+        background-color: #9F9F9F !important;
+    &#125;
+    .github-badge .bg-grey, .github-badge .bg-gray &#123;
+        background-color: #555 !important;
+    &#125;
+    .github-badge .bg-lightgrey, .github-badge .bg-lightgray &#123;
+        background-color: #9f9f9f !important;
+    &#125;</code></pre>
+<h2>文章页面添加百度收录查询</h2>
+<p>在主题 functions.php 文件最下方新增</p>
+<pre><code class="language-php">    /**
+    * 提示文章百度是否收录
+    *
+    */
+    function baidu_record() &#123;
+    $url='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+<pre><code>if(checkBaidu($url)==1)
+&#123;echo &quot;百度已收录&quot;;
+&#125;
+else
+&#123;echo &quot;&lt;a style=\&quot;color:red;\&quot; rel=\&quot;external nofollow\&quot; title=\&quot;点击提交收录！\&quot; target=\&quot;_blank\&quot; 
+href=\&quot;http://zhanzhang.baidu.com/sitesubmit/index?sitename=$url\&quot;&gt;百度未收录&lt;/a&gt;&quot;;&#125;
+&#125;
+function checkBaidu($url) &#123;
+$url = &#39;http://www.baidu.com/s?wd=&#39; . urlencode($url);
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+$rs = curl_exec($curl);
+curl_close($curl);
+if (!strpos($rs, &#39;没有找到&#39;)) &#123; //没有找到说明已被百度收录
+return 1;
+&#125; else &#123;
+return -1;
+&#125;
+&#125;&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+<p>第二步：在主题 post.php 文件想显示的地方增加</p>
+<pre><code class="language-php">    <!--百度收录-->
+    <li class="meta-categories"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i> 
+    <span class="sr-only"><?php _me("百度收录") ?>：</span> <span class="meta-value"><?php echo 
+    baidu_record() ?></span></li></code></pre>
+<h2>首页添加翻转动画</h2>
+<p>引入js（命名为wow.js）（可在模板设置添加（自定义输出head））</p>
+<pre><code class="language-js">    <script src="目录/wow.js"></script></code></pre>
+<p><div class="row">
+            <div class="col-lg-12">
+                <div id="accordion" class="custom-accordion mb-4">
+
+<pre><code>            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<p>在footer.php（主题&#x2F;component&#x2F;footer.php）（前添加）</p>
+<pre><code class="php">    &amp;lt;script&amp;gt;
+    wow = new WOW(&#123;
+    animateClass: &#39;animated&#39;,
+    &#125;);
+    wow.init();
+    &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在Content.php（主题/libs/Content.php）改&lt;/p&gt;
+&lt;p&gt;第1077&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;    $html .= &#39;&lt;div class=&quot;panel wow animated flipInX&quot;&gt;&#39;;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第1083&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-php&quot;&gt;    &lt;div class=&quot;panel  wow animated flipInX&quot;&gt;&lt;div class=&quot;index-post-img&quot;&gt;&lt;a href=&quot;&#123;$parameterArray[&#39;linkUrl&#39;]&#125;&quot;&gt;&lt;img &#123;$imageHtml&#125; &lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;盒子模式改进&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    /*盒子改进*/
+    @charset &quot;utf8&quot;;
+    /*Modifi-css for handsome 4.5.x*/
+    /*main*/
+    .entry-content&#123;background-color:transparent&#125;.panel-small .post-meta&#123;padding:25px 30px 15px 25px!important&#125;.panel-small .pos50t-meta&#123;padding-left:25px;padding-right:25px&#125;.b-light&#123;border-color:#bbb4&#125;.tip:before&#123;margin-top:0!important&#125;.wrapper-md .panel:not(.b-a),.wrapper-md .panel-small&#123;transition:all .2s;box-shadow:1px 1px 3px 1px rgba(0,0,0,0.2)!important&#125;.wrapper-md .panel:not(.b-a):hover,.wrapper-md .panel-small:hover&#123;box-shadow:1px 1px 5px 2px rgba(0,0,0,0.3)!important&#125;.list-group-item&#123;background-color:rgba(255,255,255,.35)&#125;.thumb-lg&#123;width:130px&#125;#widget-tabs-4-comments .list-group-item,#tag_toc,#post-panel,#sidebar,#post-content&#123;background-color:transparent!important&#125;#alllayout.app-aside-folded .tooltip&#123;display:none!important&#125;.standpage&#123;width:100%;height:calc(100% - 50px);position:fixed;top:50px;left:0&#125;.standpage,aside,aside *&#123;transition:all .3s&#125;.wrapper-md&gt;#comments,.wrapper-md&gt;.blog-post,.wrapper-md&gt;.breadcrumb,.m-t-lg.m-b-lg,.wrapper-md&gt;.no_search_result&#123;max-width:800px;margin-left:auto;margin-right:auto&#125;.wrapper-md .panel,.wrapper-md .panel-small,.wrapper-md&gt;#comments,.wrapper-md&gt;.breadcrumb&#123;background-color:rgba(255,255,255,.3)&#125;.wrapper-md article,.wrapper-md&gt;#comments&#123;border-radius:5px;overflow:hidden&#125;.bg-auto:before&#123;bottom:51px&#125;@media screen and (min-width:992px)&#123;aside.col.w-md.b-l&#123;background-color:rgba(255,255,255,.2)&#125;aside.col.w-md.b-l:hover&#123;background-color:#fff&#125;&#125;header.wrapper-md&#123;background-color:rgba(246,248,248,.93)!important&#125;.blog-post&gt;.panel,.blog-post&gt;.panel-small&#123;border:0;border-radius:5px&#125;.index-post-img,.index-post-img-small&#123;border-top-left-radius:5px;border-top-right-radius:5px;overflow:hidden&#125;.blog-post&gt;.panel .index-post-img .item-thumb,.panel-small .index-post-img-small .item-thumb-small,.index-post-title a&#123;transition:all .2s&#125;.blog-post&gt;.panel:hover .index-post-img .item-thumb,.blog-post&gt;.panel-small:hover .index-post-img-small .item-thumb-small&#123;transform:scale(1.05)&#125;#footer&gt;.wrapper&#123;background-color:rgba(237,241,242,.2)&#125;.streamline&#123;margin-left:20px;padding-right:10px&#125;.streamline .comment-body&#123;position:relative&#125;.streamline .comment-body .m-l-lg:before&#123;background-color:rgba(255,255,255,.3);content:&quot; &quot;;position:absolute;width:calc(100%+10px);height:calc(100%+20px);top:-10px;left:0;z-index:-1;border-radius:2px;box-shadow:0 0 2px 2px rgba(0,0,0,.125)&#125;aside.col.w-md.no-border-xs&#123;transition:all .3s&#125;.visible-xs-inline&#123;display:inline-block!important&#125;@media screen and (min-width:768px) and (max-width:1140px)&#123;.visible-xs-inline&#123;display:none!important&#125;&#125;.tocify-item&#123;background-color:rgba(255,255,255,.2.5)&#125;.tocify-item.active&#123;color:#7266ba;font-weight:700&#125;#kotori&#123;position:absolute;left:-15px;bottom:-15px;max-height:110px;transition:all .3s&#125;#kotori:hover&#123;left:0;bottom:0&#125;#kotori.hidekotori&#123;left:-110px;bottom:-110px&#125;@media screen and (max-width:767px)&#123;#kotori&#123;display:none&#125;.blog-post&gt;.panel:hover .index-post-img .item-thumb&#123;transform:none!important&#125;&#125;.index-post-title a:hover&#123;color:#2ebaae&#125;.wrapper-md .comment-list .comment-parent,.wrapper-md .comment-list .comment-children&#123;border-top-width:1px;border-top-style:solid;border-top-color:#ddd;padding-top:10px&#125;.max-img&#123;max-height:400px&#125;.navi-wrap .navi.clearfix&gt;ul.nav&#123;padding-bottom:100px&#125;.app-aside-folded.navi-wrap&#123;max-height:calc(100% - 50px)&#125;.lg-backdrop&#123;background-color:rgba(0,0,0,.8)&#125;.skPlayer-name&#123;font-family:&quot;Source Sans Pro&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft Yahei&quot;,SimSun,Helvetica,Arial,Sans-serif&#125;html.fancybox-enabled&#123;overflow-y:auto&#125;.fancybox-bg&#123;background-color:rgba(0,0,0,.95)&#125;.fancybox-arrow:after&#123;background-color:rgba(0,0,0,.8)&#125;.blog-post .post-meta.wrapper-lg&#123;padding-top:15px&#125;.share,.yellow,.red,.lblue,.green&#123;background-position-y:50%&#125;.timeline .tl-date&#123;color:#fff;text-shadow:0 0 4px #000&#125;body.modal-open&#123;overflow-y:auto;padding-right:0!important&#125;.reply2view&#123;background-color:transparent;border:solid 1px #bbb&#125;#content&#123;transition:all .3s&#125;.OwO .OwO-logo&#123;height:28px&#125;#tag_toc.fixed #toc&#123;width:100%&#125;.page-navigator .next a,.page-navigator .prev a&#123;height:31px&#125;.page-navigator&gt;li:last-child&gt;a,.page-navigator&gt;li:last-child&gt;span&#123;border-top-right-radius:4px;border-bottom-right-radius:4px&#125;#tooltip-1&#123;width:0;height:0;overflow:hidden&#125;.tooltip-2&#123;width:0;height:0;border:0&#125;.item-thumb-small&#123;background-position:left&#125;
+    /*experimental modify 2018-07-19*/
+    @media screen and (min-width:1200px)&#123;.sticky&#123;position: absolute;top: 10px;left: 15px&#125;.panel .item-thumb&#123;height:300px&#125;#post-panel .blog-post&#123;position:relative&#125;#post-panel .panel&#123;overflow:hidden&#125;#post-panel .panel .post-meta&#123;position:relative;margin-top:-300px;height:300px;padding-top:133px!important;padding-bottom:0!important;background-color:rgba(0,0,0,.3);color:#fff!important;transition:all .3s&#125;#post-panel .panel .post-meta,#post-panel .panel-small .post-meta&#123;border-radius:5px&#125;#post-panel .panel .post-meta *,#post-panel .panel-small .post-meta *&#123;color:#fff!important&#125;#post-panel .panel .post-meta&gt;h2,#post-panel .panel-small .post-meta&gt;h2&#123;text-align:center;text-shadow:0 0 3px #fff&#125;#post-panel .panel .post-meta&gt;p,#post-panel .panel .post-meta&gt;div,#post-panel .panel-small .post-meta&gt;p,#post-panel .panel-small .post-meta&gt;div&#123;transition:all .3s;transform:translateY(-10px);opacity:0&#125;#post-panel .panel .post-meta&gt;.text-muted,#post-panel .panel-small .post-meta&gt;.text-muted&#123;position:absolute;bottom:20px&#125;#post-panel .panel .post-meta&gt;.line&#123;position:absolute;bottom:40px;width:740px&#125;#post-panel .panel-small .post-meta&gt;.line&#123;position:absolute;bottom:40px;width:350px&#125;#post-panel .panel .post-meta&gt;.summary&#123;position:absolute;bottom:60px;width:740px&#125;#post-panel .panel-small .post-meta&gt;.summary&#123;position:absolute;bottom:60px;width:350px&#125;#post-panel .panel-small&#123;display:inline-block;height:300px;width:calc(50% - 10px);margin-right:20px&#125;#post-panel .panel-small:nth-child(2n)&#123;margin-right:0&#125;#post-panel .panel-small .index-img-small,#post-panel .panel-small .index-img-small .item-thumb-small&#123;height:100%;width:100%&#125;#post-panel .panel-small .post-meta&#123;position:absolute;height:300px;width:calc(50% - 10px);padding:133px 20px 0 20px!important;background-color:rgba(0,0,0,.3);color:#fff!important;transition:all .3s&#125;#post-panel .panel:hover .post-meta,#post-panel .panel-small:hover .post-meta&#123;background-color:rgba(0,0,0,.6)&#125;#post-panel .panel:hover .post-meta&gt;p,#post-panel .panel:hover .post-meta&gt;div,#post-panel .panel-small:hover .post-meta&gt;p,#post-panel .panel-small:hover .post-meta&gt;div&#123;opacity:1;transform:translateY(0)&#125;#post-panel .panel:hover .post-meta,#post-panel .panel-small:hover .post-meta&#123;padding-top:80px!important&#125;#post-panel .ahover&#123;display:block;position:absolute;top:0;left:0;right:0;bottom:0&#125;.blog-post&gt;.panel:hover .index-post-img,.blog-post&gt;.panel-small:hover .index-post-img-small&#123;filter:blur(3px)&#125;&#125;header.bg-light.wrapper-md&#123;margin-top:30px;background-color:transparent!important;border:0;text-align:center;text-shadow:0 0 3px #000&#125;header.wrapper-md *&#123;color:#fff&#125;header.wrapper-md h1&#123;font-size:32px&#125;header.wrapper-md h1&#123;font-weight:bold!important&#125;
+    /*links*/
+    .link-main&#123;padding:50px 0 50px 20px;text-align:center&#125;.link-main h3&#123;margin-top:0&#125;.link-main .item&#123;display:inline-block;letter-spacing:0;margin-right:20px;margin-bottom:20px;width:289px;height:240px;font-size:14px;overflow:hidden;border-radius:5px;background:rgba(255,255,255,.35);border:1px solid #e1e8ed;transition:background .2s&#125;.link-main .link-bg&#123;position:relative;height:90px;padding:0 1em;background-color:#777&#125;.link-main .link-bg .bg:before&#123;display:block;content:&quot;&quot;;position:absolute;left:0;height:100%;width:100%;background:rgba(0,0,0,.5)&#125;.link-main .link-bg .link-avatar&#123;position:absolute;bottom:-50px;border:4px solid #FFF;border-radius:100%;background-color:#fff;box-shadow:0 0 5px rgba(0,0,0,0.5)&#125;.link-main .link-bg .link-avatar img&#123;border-radius:100%&#125;.link-main .avatar&#123;display:block;object-fit:cover&#125;.link-main .bg,.link-main .link-bg&#123;background-repeat:no-repeat;background-position:center;background-size:cover;display:block&#125;.link-main .bg&#123;position:absolute;top:0;bottom:0;left:0;right:0;filter:blur(1.5px);background-color:#fff&#125;.link-main .meta&#123;padding:.9em 1em;text-align:right&#125;.link-main .info&#123;color:#525766;padding:0 1em 1em&#125;.link-main .info .name&#123;font-weight:600;font-size:16px&#125;@media screen and (max-width:330px)&#123;.link-main&#123;padding:50px 0 50px 0&#125;.link-main .item&#123;margin-right:0&#125;&#125;.link-main .item:hover&#123;background:rgba(255,255,255,1)&#125;.link-main .item:hover .bg&#123;filter:blur(0.1px)&#125;
+    /*comments*/
+    #comments pre code&#123;display:inline&#125;.wrapper-md&gt;#comments&#123;border:solid 1px #fff;padding:10px 30px 20px 30px&#125;.hideContent&#123;background-color:transparent;padding:10px 0&#125;
+    .agent &#123;display: inline-block;margin-left: 5px;padding: 0 3px;border-radius: 2px;color: #58666e;font-size: 12px;opacity: .8&#125;
+    /*img*/
+    img[mw400]&#123;max-width:400px!important;width:100%&#125;.mw400&#123;max-width:400px&#125;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;修复透明模式下目录树BUG&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;    /* 开发者设置——自定义css里面添加这个即可*/
+    #toc &#123;
+    background: rgba(255, 255, 255, 0.3);
+    &#125;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;博主前端不精，美化代码全部来源于网络！如有侵权，请联系站长删除&lt;/p&gt;
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qicloud-w.github.io">Qicloud</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qicloud-w.github.io/article/7c01ba366e9b.html">https://qicloud-w.github.io/article/7c01ba366e9b.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qicloud-w.github.io" target="_blank">七云's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=397" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/article/9e1adc06b4e3.html" title="Typecho 博客文章/页面内加入时间轴记录"><img class="cover" src="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=401" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Typecho 博客文章/页面内加入时间轴记录</div></div></a></div><div class="next-post pull-right"><a href="/article/a09f11bef15b.html" title="那个一句话能影响你一天的人还在吗？"><img class="cover" src="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=389" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">那个一句话能影响你一天的人还在吗？</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://q.qlogo.cn/g?b=sdk&amp;k=UeVu6eVo5SdL2Eu7PiczvTw&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Qicloud</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">211</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">71</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Qicloud-W"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">美化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">1. 头像呼吸光环和鼠标悬停旋转放大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">2. 左侧文章图标和评论头像鼠标悬停旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">3. 文章内打赏图标跳动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">4. 彩色标签云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">5. 首页文章列表悬停上浮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">6. 首页文章列表头图悬停放大并将超出范围隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">7. 文章内头图和文章图片悬停放大并将超出范围隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">8. 右侧列表导航栏图标颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">9. 点击空白区域隐藏歌曲列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">10.文章标题居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%BC%B9%E7%AA%97%E6%95%88%E6%9E%9C"><span class="toc-number">14.</span> <span class="toc-text">复制弹窗效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91%E9%A1%B5%E9%9D%A2%E6%97%B6%E9%97%B4%E8%BD%B4%E8%AE%B0%E5%BD%95"><span class="toc-number">15.</span> <span class="toc-text">关于我页面时间轴记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98"><span class="toc-number">16.</span> <span class="toc-text">js动态标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A5%E8%8A%82%E5%80%92%E8%AE%A1%E6%97%B6"><span class="toc-number">17.</span> <span class="toc-text">春节倒计时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E9%A1%B5%E5%B7%A6%E4%BE%A7%E5%8D%9A%E4%B8%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">18.</span> <span class="toc-text">首页左侧博主介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#footer"><span class="toc-number">19.</span> <span class="toc-text">文章页面添加百度收录查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#footer"><span class="toc-number">20.</span> <span class="toc-text">首页添加翻转动画</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/article/a17cd7220091.html" title="融合cdn之「饼云融控」公测邀请"><img src="https://dev.zets.cn/api/file/rand?name=imgs.txt&amp;id=292" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="融合cdn之「饼云融控」公测邀请"/></a><div class="content"><a class="title" href="/article/a17cd7220091.html" title="融合cdn之「饼云融控」公测邀请">融合cdn之「饼云融控」公测邀请</a><time datetime="2024-12-01T17:08:00.000Z" title="发表于 2024-12-02 01:08:00">2024-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/176a8e7d22fe.html" title="海南机房遭劫"><img src="https://bu.dusays.com/2023/05/08/645907596997d.gif?_r_=2f1c21b2-5038-0f12-e799-2859dfcec6b3" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="海南机房遭劫"/></a><div class="content"><a class="title" href="/article/176a8e7d22fe.html" title="海南机房遭劫">海南机房遭劫</a><time datetime="2024-09-07T16:00:00.000Z" title="发表于 2024-09-08 00:00:00">2024-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/e0c83aa5d972.html" title="版权流氓「视觉中国」"><img src="/../image/telang.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="版权流氓「视觉中国」"/></a><div class="content"><a class="title" href="/article/e0c83aa5d972.html" title="版权流氓「视觉中国」">版权流氓「视觉中国」</a><time datetime="2024-07-20T16:00:00.000Z" title="发表于 2024-07-21 00:00:00">2024-07-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/4bc37880446c.html" title="继中科大dockerhub源不对外后各大厂商均关闭服务"><img src="https://dev.zets.cn/storage/inis-theme-jue/article/2024-06-08image/1717865122419.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="继中科大dockerhub源不对外后各大厂商均关闭服务"/></a><div class="content"><a class="title" href="/article/4bc37880446c.html" title="继中科大dockerhub源不对外后各大厂商均关闭服务">继中科大dockerhub源不对外后各大厂商均关闭服务</a><time datetime="2024-06-18T06:09:10.000Z" title="发表于 2024-06-18 14:09:10">2024-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/article/c229f149435b.html" title="「破代码」迁移inis3到hexo"><img src="/../image/hexo240522.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="「破代码」迁移inis3到hexo"/></a><div class="content"><a class="title" href="/article/c229f149435b.html" title="「破代码」迁移inis3到hexo">「破代码」迁移inis3到hexo</a><time datetime="2024-05-22T14:58:00.000Z" title="发表于 2024-05-22 22:58:00">2024-05-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Qicloud</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//npm.elemecdn.com/penndu@1.0.0/bsz.js"></script></div></body></html>
